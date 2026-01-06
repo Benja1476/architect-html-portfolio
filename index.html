@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architect | Live Preview Demo</title>
+    <title>Architect | Premium Portfolio Demo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;800&display=swap" rel="stylesheet">
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Plus Jakarta Sans', sans-serif; background: #000; }
         
-        /* แถบเมนู Demo Bar ด้านบน */
+        /* Demo Toolbar */
         .demo-bar {
             height: 70px;
             background: #0a0a0a;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 30px;
+            padding: 0 20px;
             border-bottom: 1px solid #222;
             position: relative;
             z-index: 9999;
         }
 
-        /* ส่วนแสดงผลเว็บไซต์หลัก */
         .iframe-wrapper {
             height: calc(100vh - 70px);
             width: 100%;
+            background: #000;
         }
 
         iframe {
@@ -37,9 +37,9 @@
         .btn-buy {
             background: #0284c7;
             color: white;
-            padding: 10px 24px;
+            padding: 8px 20px;
             border-radius: 50px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -47,29 +47,22 @@
             text-decoration: none;
         }
         .btn-buy:hover { background: #0369a1; transform: translateY(-2px); }
-        
-        .nav-link {
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .nav-link:hover { color: white; }
     </style>
 </head>
 <body>
 
     <header class="demo-bar">
-        <div class="flex items-center gap-4">
-            <div class="text-white font-black uppercase tracking-tighter text-xl">Architect.</div>
-            <span class="hidden md:block text-[10px] text-gray-500 font-bold border border-gray-800 px-2 py-1 rounded">V1.0 LIVE PREVIEW</span>
+        <div class="flex items-center gap-3">
+            <div class="text-white font-black uppercase tracking-tighter text-lg">Architect.</div>
+            <span class="hidden sm:block text-[9px] text-gray-500 font-bold border border-gray-800 px-2 py-0.5 rounded uppercase">Live Preview</span>
         </div>
 
         <div class="flex items-center gap-4 md:gap-8">
-            <nav class="hidden md:flex gap-6 text-[10px] font-black uppercase tracking-widest text-gray-400">
-                <a href="main.html" target="demoFrame" class="nav-link">Main Page</a>
-                <a href="documentation.html" target="demoFrame" class="nav-link">Documentation</a>
+            <nav class="flex gap-4 md:gap-6 text-[10px] font-black uppercase tracking-widest text-gray-400">
+                <a href="main.html" target="demoFrame" class="hover:text-white transition-colors">Main Page</a>
+                <a href="documentation.html" target="demoFrame" class="hover:text-white transition-colors">Docs</a>
             </nav>
-            
-            <a href="#" class="btn-buy">Purchase Now</a>
+            <a href="#" class="btn-buy">Buy Now</a>
         </div>
     </header>
 
