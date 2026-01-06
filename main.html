@@ -3,79 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architect | Live Preview Demo</title>
+    <title>Architect | Executive Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Plus Jakarta Sans', sans-serif; }
-        
-        /* แถบเมนู Demo Bar ด้านบน */
-        .demo-bar {
-            height: 70px;
-            background: #0a0a0a;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 30px;
-            border-bottom: 1px solid #222;
-            position: relative;
-            z-index: 9999;
-        }
-
-        /* ส่วนแสดงผลเว็บไซต์หลัก */
-        .iframe-wrapper {
-            height: calc(100vh - 70px);
-            width: 100%;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .btn-buy {
-            background: #0284c7;
-            color: white;
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        .btn-buy:hover { background: #0369a1; transform: translateY(-2px); }
-        
-        .nav-link {
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .nav-link:hover { color: white; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: all 0.5s ease; }
+        .bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .bento-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 2rem; padding: 2rem; transition: 0.3s; }
+        .bento-card:hover { border-color: #0284c7; transform: translateY(-5px); }
+        .dark { background-color: #050505; color: #ffffff; }
+        .light { background-color: #f8fafc; color: #0f172a; }
+        .light .bento-card { background: #ffffff; border-color: #e2e8f0; }
     </style>
 </head>
-<body>
+<body class="dark" id="bodyTag">
 
-    <header class="demo-bar">
-        <div class="flex items-center gap-4">
-            <div class="text-white font-black uppercase tracking-tighter text-xl">Architect.</div>
-            <span class="hidden md:block text-[10px] text-gray-500 font-bold border border-gray-800 px-2 py-1 rounded">V1.0 LIVE PREVIEW</span>
-        </div>
-
-        <div class="flex items-center gap-4 md:gap-8">
-            <nav class="hidden md:flex gap-6 text-[10px] font-black uppercase tracking-widest text-gray-400">
-                <a href="main.html" target="demoFrame" class="nav-link">Main Page</a>
-                <a href="documentation.html" target="demoFrame" class="nav-link">Documentation</a>
-            </nav>
-            
-            <a href="#" class="btn-buy">Purchase Now</a>
-        </div>
-    </header>
-
-    <div class="iframe-wrapper">
-        <iframe src="main.html" name="demoFrame" id="demoFrame"></iframe>
+    <div class="fixed bottom-8 right-8 z-50">
+        <button onclick="toggleTheme()" class="bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all">
+            <span id="themeText">Light Mode</span>
+        </button>
     </div>
 
+    <main class="max-w-6xl mx-auto px-6 py-20">
+        
+        <section class="mb-20 text-center md:text-left" data-aos="fade-up">
+            <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-6">
+                ARCHITECT<span class="text-blue-600">.</span>
+            </h1>
+            <p class="text-xl md:text-2xl opacity-60 max-w-2xl leading-relaxed">
+                Systems Architect & Executive Consultant. I build robust digital infrastructures for high-stakes business environments.
+            </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            
+            <div class="md:col-span-2 bento-card" data-aos="fade-right">
+                <span class="text-blue-500 font-bold uppercase tracking-widest text-xs">Expertise</span>
+                <h3 class="text-2xl font-bold mt-4 mb-2">Strategic Infrastructure</h3>
+                <p class="opacity-50 text-sm">Designing scalable systems that align with long-term corporate objectives and technical excellence.</p>
+            </div>
+
+            <div class="bento-card flex flex-col justify-center items-center text-center" data-aos="zoom-in">
+                <div class="text-5xl font-black text-blue-600">10+</div>
+                <div class="text-[10px] uppercase font-bold tracking-widest mt-2">Years Exp.</div>
+            </div>
+
+            <div class="bento-card" data-aos="fade-left">
+                <h3 class="text-xl font-bold mb-2">Security</h3>
+                <p class="opacity-50 text-xs text-blue-400">Enterprise-grade protection.</p>
+            </div>
+
+            <div class="md:col-span-4 bento-card flex flex-col md:flex-row justify-between items-center gap-6" data-aos="fade-up">
+                <div>
+                    <h3 class="text-3xl font-bold">Latest Deployment</h3>
+                    <p class="opacity-50 mt-2">Global Data Nexus for Fintech Industries</p>
+                </div>
+                <button class="border-2 border-current px-8 py-3 rounded-full font-bold uppercase text-xs hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all">
+                    View Project
+                </button>
+            </div>
+
+        </div>
+
+        <section class="mt-32 text-center" data-aos="zoom-out">
+            <h2 class="text-4xl font-bold mb-8">Ready to architect your future?</h2>
+            <a href="mailto:hello@example.com" class="text-2xl md:text-4xl font-light underline decoration-blue-600 underline-offset-8 hover:text-blue-500 transition-all">
+                get-in-touch@architect.pro
+            </a>
+        </section>
+
+    </main>
+
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 1000, once: true });
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const body = document.getElementById('bodyTag');
+            const text = document.getElementById('themeText');
+            
+            if (body.classList.contains('dark')) {
+                body.classList.replace('dark', 'light');
+                text.innerText = 'Dark Mode';
+            } else {
+                body.classList.replace('light', 'dark');
+                text.innerText = 'Light Mode';
+            }
+        }
+    </script>
 </body>
 </html>
